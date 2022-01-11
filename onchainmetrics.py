@@ -1,0 +1,38 @@
+from itertools import groupby
+daily_bitcoin_transactions = [{'Date':'1/9', 'Volume':246420}, {'Date':'1/8', 'Volume':240990}, {'Date':'1/7', 'Volume':241970}, {'Date':'1/6', 'Volume':240050}, {'Date':'1/5', 'Volume':240300}, {'Date':'1/4', 'Volume':239680}, {'Date':'1/3', 'Volume':240690}, {'Date':'1/2', 'Volume':241700}, {'Date':'1/1', 'Volume':244070}]
+btc_grp = groupby(daily_bitcoin_transactions, key = lambda x:x['Volume'])
+for key, value in btc_grp:
+    print(key, list(value))
+monthly_bitcoin_transactions_in_millions = [{'Month':'January 2022', 'Volume':2.12}, {'Month':'December 2021', 'Volume':8.11}, {'Month':'November 2021', 'Volume':8.3}, {'Month':'October 2021', 'Volume':8.45}, {'Month':'September 2021', 'Volume':7.6}, {'Month':'August 2021', 'Volume':7.46}, {'Month':'July 2021', 'Volume':6.8}, {'Month':'June 2021', 'Volume':6.51}, {'Month':'May 2021', 'Volume':7.79}, {'Month':'April 2021', 'Volume':8.35}, {'Month':'March 2021', 'Volume':9.34}, {'Month':'February 2021', 'Volume':8.97}, {'Month':'January 2021', 'Volume':10.07}, {'Month':'December 2020', 'Volume':9.72}]
+monthly_grp = groupby(monthly_bitcoin_transactions_in_millions, key = lambda x:x['Month'])
+for key, value in monthly_grp:
+    print(key, list(value))
+active_btc_addresses_in_millions = [{'Month':'January 2022', 'Volume':8.43}, {'Month':'December 2021', 'Volume':29.68}, {'Month':'November 2021', 'Volume':29.07}, {'Month':'October 2021', 'Volume':29.7}, {'Month':'September 2021', 'Volume':26.54}, {'Month':'August 2021', 'Volume':26.29}, {'Month':'July 2021', 'Volume':24.75}, {'Month':'June 2021', 'Volume':26.25}, {'Month':'May 2021', 'Volume':33.54}, {'Month':'April 2021', 'Volume':33.08}, {'Month':'March 2021', 'Volume':35.31}, {'Month':'February 2021', 'Volume':32.11}, {'Month':'January 2021', 'Volume':35.64}, {'Month':'December 2020', 'Volume':32.61}]
+address_grp = groupby(active_btc_addresses_in_millions, key=lambda x:x['Month'])
+for key, value in address_grp:
+    print(key, list(value))
+new_addresses_in_millions = [{'Month':'January 2022', 'Volume':3.65}, {'Month':'December 2021', 'Volume':13.28}, {'Month':'November 2021', 'Volume':13.41}, {'Month':'October 2021', 'Volume':13.32}, {'Month':'September 2021', 'Volume':11.79}, {'Month':'August 2021', 'Volume':11.69}, {'Month':'July 2021', 'Volume':10.74}, {'Month':'June 2021', 'Volume':11.2}, {'Month':'May 2021', 'Volume':13.93}, {'Month':'April 2021', 'Volume':15.19}, {'Month':'March 2021', 'Volume':16.29}, {'Month':'February 2021', 'Volume':15.49}, {'Month':'January 2021', 'Volume':17.07}, {'Month':'December 2020', 'Volume':15.68}, {'Month':'November 2020', 'Volume':14.62}, {'Month':'October 2020', 'Volume':14.84}, {'Month':'September 2020', 'Volume':14.43}, {'Month':'August 2020', 'Volume':15.23}, {'Month':'July 2020', 'Volume':14.72}]
+add_grp = groupby(new_addresses_in_millions, key=lambda x:x['Month'])
+for key, value in add_grp:
+    print(key, list(value))
+btc_adjusted_onchainvolume_in_billions = [{'Time':'January 2022', 'Volume':99.06}, {'Time':'November 2021', 'Volume':593.23}, {'Time':'October 2021', 'Volume':561.6}, {'Time':'August 2021', 'Volume':259.37}, {'Time':'July 2021', 'Volume':212.22}, {'Time':'April 2021', 'Volume':446.86}, {'Time':'October 2020', 'Volume':92.09}, {'Time':'April 2020', 'Volume':50.18}, {'Time':'July 2019', 'Volume':93.45}, {'Time':'June 2018', 'Volume':44.18}, {'Time':'December 2017', 'Volume':207.86}, {'Time':'August 2017', 'Volume':72.11},{'Time':'April 2017', 'Volume':15.14}]
+b_grp = groupby(btc_adjusted_onchainvolume_in_billions, key= lambda x:x['Volume'])
+for key, value in b_grp:
+    print(key, list(value))
+miner_revenue_monthly_in_millions = [{'Time':'January 2022', 'Subsidy':371.75, 'Total':376.44}, {'Time':'November 2021(in billions)', 'Subsidy':1.66}, {'Time':'October 2021(in billions)', 'Subsidy':1.69, 'Total':1.72}, {'Time':'September 2021(in billions)', 'Subsidy':1.29, 'Total':1.31}, {'Time':'August 2021(in billions)', 'Subsidy':1.39, 'Total':1.41}, {'Time':'June 2021', 'Subsidy':796.95, 'Total':839.09}, {'Time':'May 2021(in billions)', 'Subsidy':1.32, 'Total':1.45}, {'Time':'May 2021(in billions)', 'Subsidy':1.58, 'Total':1.75}, {'Time':'October 2020', 'Subsidy':309.71, 'Total':352.66}, {'Time':'April 2020', 'Subsidy':406.43, 'Total':412.53}, {'Time':'May 2020', 'Subsidy':336.16, 'Total':366.44}, {'Time':'March 2020', 'Subsidy':372.6, 'Total':380.66}, {'Time':'February 2020', 'Subsidy':500.78, 'Total':507.99}, {'Time':'January 2020', 'Subsidy':494.37, 'Total':499.59}, {'Time':'December 2019', 'Subsidy':416.99, 'Total':421.57}]
+miner_grp = groupby(miner_revenue_monthly_in_millions, key=lambda x:x['Time'])
+for key, value in miner_grp:
+    print(key, list(value))
+miner_transactionfees_in_millions = [{'Time':'January 2022', 'Fee':4.69}, {'Time':'November 2021', 'Fee':24.73}, {'Time':'October 2021', 'Fee':27.47}, {'Time':'August 2021', 'Fee':18.72}, {'Time':'June 2021', 'Fee':42.14}, {'Time':'April 2021', 'Fee':247.02}, {'Time':'March 2021', 'Fee':167.21}, {'Time':'February 2021', 'Fee':186.38}, {'Time':'December 2020', 'Fee':68.3}, {'Time':'September 2020', 'Fee':26.3}, {'Time':'August 2020', 'Fee':39.24}, {'Time':'June 2020', 'Fee':11.97}, {'Time':'May 2020', 'Fee':30.28}, {'Time':'April 2020', 'Fee':6.1}]
+m_grp = groupby(miner_transactionfees_in_millions, key=lambda x:x['Fee'])
+for key, value in m_grp:
+    print(key, list(value))
+hash_Rate = [{'Time':'1/9/22', 'EH/s':176.75}, {'Time':'1/1/22', 'EH/s':168.2}, {'Time':'12/26/21', 'EH/s':180.81}, {'Time':'12/9/21', 'EH/s':180/5}, {'Time':'12/6/21', 'EH/s':167.82}, {'Time':'11/28/21', 'EH/s':155.71}, {'Time':'11/22/21', 'EH/s':162.31}, {'Time':'11/8/21', 'EH/s':164.89}, {'Time':'10/25/21', 'EH/s':150.43}, {'Time':'10/8/21', 'EH/s':147.17}, {'Time':'9/23/21', 'EH/s':134.02}, {'Time':'9/12/21', 'EH/s':134.81}, {'Time':'8/26/21', 'EH/s':129.1}, {'Time':'8/20/21', 'EH/s':122.43}, {'Time':'8/6/21', 'EH/s':110.66}, {'Time':'7/23/21', 'EH/s':101.11}, {'Time':'7/12/21', 'EH/s':97.2}, {'Time':'6/30/21', 'EH/s':90.73}, {'Time':'6/19/21','EH/s':130.24}, {'Time':'6/11/21','EH/s':140.2}, {'Time':'5/25/21','EH/s':143.72},{'Time':'5/13/21','EH/s':178.99}, {'Time':'5/2/21','EH/s':157.58},{'Time':'4/21/21','EH/s':141.49},{'Time':'4/15/21','EH/s':165.79},{'Time':'4/4/21','EH/s':162.2},{'Time':'3/18/21','EH/s':154.6},{'Time':'3/3/21','EH/s':156.59}, {'Time':'2/9/21','EH/s':166.03}, {'Time':'1/31/21','EH/s':150.1}, {'Time':'1/3/21', 'EH/s':145.1}, {'Time':'12/23/20', 'EH/s':134.84}, {'Time':'11/30/20','EH/s':131.37}, {'Time':'11/21/21','EH/s':133.05}, {'Time':'11/13/21','EH/s':128.28},{'Time':'10/30/20','EH/s':116.02}, {'Time':'10/24/20','EH/s':133.56}]
+hash = groupby(hash_Rate, key=lambda x:x['EH/s'])
+for key, value in hash:
+    print(key, list(value))
+major_btc_pools = ['AntPool', 'F2Pool', 'ViaBTC', 'Poolin']
+Bitcoin_Miner_Revenue_per_THS = [{'Date':'1/9/22', 'TH/s':0.23}, {'Date':'11/9/21','TH/s':0.37}, {'Date':'9/28/21','TH/s':0.29},{'Date':'9/8/21', 'TH/s':0.36}, {'Date':'8/26/21', 'TH/s':0.4}, {'Date':'6/26/21', 'TH/s':0.23}, {'Date':'5/26/21', 'TH/s':0.22}, {'Date':'1/23/21', 'TH/s':0.24}, {'Date':'12/8/20', 'TH/s':0.14}, {'Date':'10/16/20', 'TH/s':0.08}, {'Date':'8/9/20', 'TH/s':0.09}, {'Date':'5/18/20', 'TH/s':0.09}, {'Date':'4/13/20', 'TH/s':0.13}, {'Date':'3/20/20', 'TH/s':0.09}, {'Date':'2/29/20', 'TH/s':0.15}, {'Date':'12/26/18', 'TH/s':0.19}, {'Date':'7/30/18', 'TH/s':0.39}, {'Date':'5/8/18', 'TH/s':0.6}, {'Date':'3/5/18', 'TH/s':0.93}, {'Date':'1/9/18', 'TH/s':2.77}, {'Date':'1/1/18', 'TH/s':2.68}, {'Date':'12/21/17', 'TH/s':3.53}]
+btc_grp = groupby(Bitcoin_Miner_Revenue_per_THS, key=lambda x:x['TH/s'])
+for key, value in btc_grp:
+    print(key, list(value))
